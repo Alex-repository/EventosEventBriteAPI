@@ -17,7 +17,12 @@ class Formulario extends Component {
       <EventosConsumer>
         {value => {
           return (
-            <form>
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+                value.obtenerEventos(this.state);
+              }}
+            >
               <fieldset className="uk-fieldset uk-margin">
                 <legend className=" uk-legend uk-text-center">
                   Busca tu evento por nombre o categoria
